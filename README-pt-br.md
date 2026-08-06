@@ -69,3 +69,7 @@ Qualquer hospedagem estática funciona, por exemplo:
 - GitHub: [github.com/LukasPio](https://github.com/LukasPio)
 - E-mail: contato.lukaspio@gmail.com
 - WhatsApp: [wa.me/5511945462692](https://wa.me/5511945462692)
+
+## Fique à vontade pra usar
+
+Fique à vontade pra dar fork ou copiar esse código e trocar pelas suas próprias informações — nome, bio, links e cores. Não precisa pedir permissão nem me dar crédito, é só fazer sua versão.
