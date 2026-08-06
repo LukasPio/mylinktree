@@ -69,3 +69,7 @@ Any static host works, for example:
 - GitHub: [github.com/LukasPio](https://github.com/LukasPio)
 - Email: contato.lukaspio@gmail.com
 - WhatsApp: [wa.me/5511945462692](https://wa.me/5511945462692)
+
+## Feel free to use it
+
+Feel free to fork or copy this code and swap in your own information — name, bio, links, and colors. No need to ask permission or credit me, just make it yours.
