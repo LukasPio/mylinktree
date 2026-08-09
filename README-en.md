@@ -15,14 +15,19 @@ It links out to:
 - **Email** — direct contact
 - **GitHub** — my code and projects
 
-The page also includes semantic navigation, visible keyboard focus states, reduced-motion support, and a mobile layout.
+The page also includes an English/Portuguese language switcher, semantic navigation, visible keyboard focus states, reduced-motion support, and a mobile layout.
+
+## Language switcher
+
+The **PT / EN** control at the top of the page translates all visible interface copy as well as the document title, search description, language attribute, and accessibility labels. On the first visit, the page follows the browser language (Portuguese browsers use Brazilian Portuguese; all others use English). The visitor's choice is saved in `localStorage` and restored on future visits.
 
 ## Tech stack
 
-Just one HTML file. There is no build step, framework, package manager, or JavaScript — open it in a browser and it works.
+Just one HTML file. There is no build step, framework, or package manager — open it in a browser and it works.
 
 - HTML5
 - CSS3
+- Vanilla JavaScript — translations and language preference
 - `DM Sans` — body and interface text
 - `Manrope` — headings and brand marks
 
@@ -61,6 +66,7 @@ Everything lives in `index.html`:
 | Featured company | `<a class="company-card">` |
 | Contact and project links | `<nav class="links">` |
 | Footer text | `<footer>` |
+| Portuguese and English copy | `translations` inside `<script>` |
 
 ## Deploying
 

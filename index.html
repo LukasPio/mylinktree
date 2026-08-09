@@ -59,6 +59,41 @@
       margin: 0 auto;
     }
 
+    .language-switcher {
+      display: flex;
+      width: max-content;
+      margin: 0 0 22px auto;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(49, 58, 51, 0.045);
+      backdrop-filter: blur(12px);
+      animation: enter 0.6s ease both;
+    }
+
+    .language-button {
+      min-width: 42px;
+      padding: 7px 10px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--muted);
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      background: transparent;
+      cursor: pointer;
+      transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .language-button[aria-pressed="true"] {
+      color: #fff;
+      background: var(--brand);
+      box-shadow: 0 4px 12px rgba(31, 91, 69, 0.2);
+    }
+
+    .language-button:focus-visible { outline: 3px solid rgba(220, 169, 99, 0.65); outline-offset: 2px; }
+
     .profile {
       margin-bottom: 30px;
       text-align: center;
@@ -245,36 +280,41 @@
 </head>
 <body>
   <main>
+    <div class="language-switcher" role="group" aria-label="Selecionar idioma" data-i18n-aria-label="languageSelector">
+      <button class="language-button" type="button" data-language="pt-BR" aria-pressed="true" aria-label="Português">PT</button>
+      <button class="language-button" type="button" data-language="en" aria-pressed="false" aria-label="English">EN</button>
+    </div>
+
     <header class="profile">
       <div class="avatar" aria-hidden="true">LP</div>
-      <p class="eyebrow">Soluções digitais</p>
+      <p class="eyebrow" data-i18n="eyebrow">Soluções digitais</p>
       <h1>Lucas Pio</h1>
-      <p class="intro">Transformo boas ideias em <strong>experiências digitais simples, bonitas e eficientes</strong>. Vamos tirar seu projeto do papel?</p>
+      <p class="intro" data-i18n-html="intro">Transformo boas ideias em <strong>experiências digitais simples, bonitas e eficientes</strong>. Vamos tirar seu projeto do papel?</p>
     </header>
 
-    <a class="company-card" href="https://opontoweb.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Conheça o site da O Ponto Web">
+    <a class="company-card" href="https://opontoweb.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Conheça o site da O Ponto Web" data-i18n-aria-label="companyAriaLabel">
       <div class="company-top">
         <span class="company-mark" aria-hidden="true">O.</span>
         <span>
-          <span class="company-label">Minha empresa</span>
+          <span class="company-label" data-i18n="companyLabel">Minha empresa</span>
           <span class="company-name">O Ponto Web</span>
         </span>
       </div>
-      <p class="company-copy">Sites profissionais pensados para fortalecer sua marca e gerar novas oportunidades para o seu negócio.</p>
+      <p class="company-copy" data-i18n="companyCopy">Sites profissionais pensados para fortalecer sua marca e gerar novas oportunidades para o seu negócio.</p>
       <span class="company-action">
-        Conhecer a O Ponto Web
+        <span data-i18n="companyAction">Conhecer a O Ponto Web</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </span>
     </a>
 
-    <nav class="links" aria-label="Links de Lucas Pio">
+    <nav class="links" aria-label="Links de Lucas Pio" data-i18n-aria-label="linksAriaLabel">
       <a class="link-card" href="https://wa.me/5511945462692" target="_blank" rel="noopener noreferrer">
         <span class="icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.4-4.7a8.5 8.5 0 1 1 16.1-4.1Z"/><path d="M8.1 7.8c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .5.4l.8 2c.1.3.1.5-.1.7l-.6.8c-.2.2-.1.4 0 .6.6 1.1 1.5 2 2.7 2.6.2.1.4.1.6-.1l.8-1c.2-.2.4-.3.7-.2l1.9.9c.3.1.5.3.5.5 0 .3-.1 1.5-.7 2.1-.6.6-1.5.9-2.4.7-1.2-.2-2.8-.8-4.7-2.5-2.2-1.9-3.5-4.4-3.6-5.7 0-.6.1-1 .4-1.4Z"/></svg>
         </span>
         <span class="link-content">
-          <span class="link-title">Vamos conversar</span>
-          <span class="link-description">Fale comigo pelo WhatsApp</span>
+          <span class="link-title" data-i18n="whatsappTitle">Vamos conversar</span>
+          <span class="link-description" data-i18n="whatsappDescription">Fale comigo pelo WhatsApp</span>
         </span>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
       </a>
@@ -284,7 +324,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
         </span>
         <span class="link-content">
-          <span class="link-title">E-mail</span>
+          <span class="link-title" data-i18n="emailTitle">E-mail</span>
           <span class="link-description">contato.lukaspio@gmail.com</span>
         </span>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
@@ -295,14 +335,108 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 22v-3.9c0-1 .1-1.4-.5-2 2.7-.3 5.5-1.3 5.5-6A4.7 4.7 0 0 0 18.7 7c.1-.3.5-1.6-.1-3.1 0 0-1.1-.4-3.6 1.2a12.4 12.4 0 0 0-6.5 0C6 3.5 4.9 3.9 4.9 3.9 4.3 5.4 4.7 6.7 4.8 7a4.7 4.7 0 0 0-1.3 3.2c0 4.6 2.8 5.6 5.5 5.9-.5.5-.6 1.1-.6 2V22"/><path d="M8.4 19c-2.7.8-2.8-1.2-3.9-1.5"/></svg>
         </span>
         <span class="link-content">
-          <span class="link-title">Projetos no GitHub</span>
-          <span class="link-description">Veja alguns dos meus trabalhos</span>
+          <span class="link-title" data-i18n="githubTitle">Projetos no GitHub</span>
+          <span class="link-description" data-i18n="githubDescription">Veja alguns dos meus trabalhos</span>
         </span>
         <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
       </a>
     </nav>
 
-    <footer>© 2026 Lucas Pio · Feito com cuidado</footer>
+    <footer data-i18n="footer">© 2026 Lucas Pio · Feito com cuidado</footer>
   </main>
+  <script>
+    const translations = {
+      'pt-BR': {
+        pageTitle: 'Lucas Pio — Soluções Digitais',
+        pageDescription: 'Lucas Pio — soluções digitais, projetos e canais de contato.',
+        languageSelector: 'Selecionar idioma',
+        eyebrow: 'Soluções digitais',
+        intro: 'Transformo boas ideias em <strong>experiências digitais simples, bonitas e eficientes</strong>. Vamos tirar seu projeto do papel?',
+        companyAriaLabel: 'Conheça o site da O Ponto Web',
+        companyLabel: 'Minha empresa',
+        companyCopy: 'Sites profissionais pensados para fortalecer sua marca e gerar novas oportunidades para o seu negócio.',
+        companyAction: 'Conhecer a O Ponto Web',
+        linksAriaLabel: 'Links de Lucas Pio',
+        whatsappTitle: 'Vamos conversar',
+        whatsappDescription: 'Fale comigo pelo WhatsApp',
+        emailTitle: 'E-mail',
+        githubTitle: 'Projetos no GitHub',
+        githubDescription: 'Veja alguns dos meus trabalhos',
+        footer: '© 2026 Lucas Pio · Feito com cuidado'
+      },
+      en: {
+        pageTitle: 'Lucas Pio — Digital Solutions',
+        pageDescription: 'Lucas Pio — digital solutions, projects, and contact channels.',
+        languageSelector: 'Select language',
+        eyebrow: 'Digital solutions',
+        intro: 'I turn good ideas into <strong>simple, beautiful, and effective digital experiences</strong>. Let\'s bring your project to life.',
+        companyAriaLabel: 'Visit the O Ponto Web website',
+        companyLabel: 'My company',
+        companyCopy: 'Professional websites designed to strengthen your brand and create new opportunities for your business.',
+        companyAction: 'Discover O Ponto Web',
+        linksAriaLabel: 'Lucas Pio links',
+        whatsappTitle: 'Let\'s talk',
+        whatsappDescription: 'Message me on WhatsApp',
+        emailTitle: 'Email',
+        githubTitle: 'Projects on GitHub',
+        githubDescription: 'Take a look at some of my work',
+        footer: '© 2026 Lucas Pio · Made with care'
+      }
+    };
+
+    const languageButtons = document.querySelectorAll('[data-language]');
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+
+    function getSavedLanguage() {
+      try {
+        return localStorage.getItem('preferredLanguage');
+      } catch {
+        return null;
+      }
+    }
+
+    function saveLanguage(language) {
+      try {
+        localStorage.setItem('preferredLanguage', language);
+      } catch {
+        // The toggle still works when storage is blocked or unavailable.
+      }
+    }
+
+    function setLanguage(language) {
+      const selectedLanguage = translations[language] ? language : 'pt-BR';
+      const copy = translations[selectedLanguage];
+
+      document.documentElement.lang = selectedLanguage;
+      document.title = copy.pageTitle;
+      descriptionMeta.content = copy.pageDescription;
+
+      document.querySelectorAll('[data-i18n]').forEach((element) => {
+        element.textContent = copy[element.dataset.i18n];
+      });
+
+      document.querySelectorAll('[data-i18n-html]').forEach((element) => {
+        element.innerHTML = copy[element.dataset.i18nHtml];
+      });
+
+      document.querySelectorAll('[data-i18n-aria-label]').forEach((element) => {
+        element.setAttribute('aria-label', copy[element.dataset.i18nAriaLabel]);
+      });
+
+      languageButtons.forEach((button) => {
+        button.setAttribute('aria-pressed', String(button.dataset.language === selectedLanguage));
+      });
+
+      saveLanguage(selectedLanguage);
+    }
+
+    languageButtons.forEach((button) => {
+      button.addEventListener('click', () => setLanguage(button.dataset.language));
+    });
+
+    const savedLanguage = getSavedLanguage();
+    const browserLanguage = navigator.language.toLowerCase().startsWith('pt') ? 'pt-BR' : 'en';
+    setLanguage(savedLanguage || browserLanguage);
+  </script>
 </body>
 </html>

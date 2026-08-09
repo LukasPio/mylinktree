@@ -15,14 +15,19 @@ Ela leva para:
 - **E-mail** — contato direto
 - **GitHub** — meu código e projetos
 
-A página também inclui navegação semântica, foco visível para teclado, suporte à preferência por movimento reduzido e layout para dispositivos móveis.
+A página também inclui um seletor de português/inglês, navegação semântica, foco visível para teclado, suporte à preferência por movimento reduzido e layout para dispositivos móveis.
+
+## Seletor de idioma
+
+O controle **PT / EN** no topo da página traduz todos os textos visíveis, além do título do documento, descrição para buscadores, atributo de idioma e rótulos de acessibilidade. Na primeira visita, a página acompanha o idioma do navegador (navegadores em português usam português brasileiro; os demais usam inglês). A escolha do visitante fica salva no `localStorage` e é restaurada nas próximas visitas.
 
 ## Stack
 
-Apenas um arquivo HTML. Sem build, framework, gerenciador de pacotes ou JavaScript — é só abrir no navegador e usar.
+Apenas um arquivo HTML. Sem build, framework ou gerenciador de pacotes — é só abrir no navegador e usar.
 
 - HTML5
 - CSS3
+- JavaScript puro — traduções e preferência de idioma
 - `DM Sans` — textos corridos e de interface
 - `Manrope` — títulos e elementos da marca
 
@@ -61,6 +66,7 @@ Tudo está em `index.html`:
 | Empresa em destaque | `<a class="company-card">` |
 | Links de contato e projetos | `<nav class="links">` |
 | Texto do rodapé | `<footer>` |
+| Textos em português e inglês | `translations` dentro de `<script>` |
 
 ## Publicando
 
