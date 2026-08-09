@@ -37,6 +37,8 @@ As duas fontes são carregadas via Google Fonts (CDN).
 
 ```
 .
+├── assets/
+│   └── pontoweb-logo.webp # logo otimizado da O Ponto Web
 ├── index.html          # a landing page e seus estilos
 ├── README.md           # seletor de idioma
 ├── README-en.md        # documentação em inglês

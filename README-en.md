@@ -37,6 +37,8 @@ Both fonts are loaded from Google Fonts via CDN.
 
 ```
 .
+├── assets/
+│   └── pontoweb-logo.webp # optimized O Ponto Web logo
 ├── index.html          # the landing page and its styles
 ├── README.md           # language selector
 ├── README-en.md        # English documentation

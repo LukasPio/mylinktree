@@ -185,17 +185,19 @@
     .company-top { position: relative; z-index: 1; gap: 12px; }
 
     .company-mark {
-      display: grid;
       width: 44px;
       height: 44px;
       flex: 0 0 auto;
-      place-items: center;
+      overflow: hidden;
       border-radius: 13px;
-      color: var(--brand-dark);
-      font-family: 'Manrope', sans-serif;
-      font-size: 18px;
-      font-weight: 800;
-      background: #f2c684;
+      background: #07335d;
+    }
+
+    .company-mark img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .company-label { display: block; color: rgba(255, 255, 255, 0.66); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
@@ -294,7 +296,9 @@
 
     <a class="company-card" href="https://opontoweb.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Conheça o site da O Ponto Web" data-i18n-aria-label="companyAriaLabel">
       <div class="company-top">
-        <span class="company-mark" aria-hidden="true">O.</span>
+        <span class="company-mark" aria-hidden="true">
+          <img src="assets/pontoweb-logo.webp" alt="" width="44" height="44">
+        </span>
         <span>
           <span class="company-label" data-i18n="companyLabel">Minha empresa</span>
           <span class="company-name">O Ponto Web</span>
