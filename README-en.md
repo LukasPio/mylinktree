@@ -19,7 +19,7 @@ The page also includes an English/Portuguese language switcher, semantic navigat
 
 ## Language switcher
 
-The **PT / EN** control at the top of the page translates all visible interface copy as well as the document title, search description, language attribute, and accessibility labels. On the first visit, the page follows the browser language (Portuguese browsers use Brazilian Portuguese; all others use English). The visitor's choice is saved in `localStorage` and restored on future visits.
+The **PT / EN** control at the top of the page translates all visible interface copy as well as the document title, search description, language attribute, and accessibility labels. When there is no saved choice, the page checks the browser's ordered language preferences and uses the first supported option: Portuguese locales use Brazilian Portuguese, English locales use English, and unsupported locales fall back to English. An explicit visitor choice is saved in `localStorage` and restored on future visits.
 
 ## Tech stack
 

@@ -403,7 +403,20 @@
       }
     }
 
-    function setLanguage(language) {
+    function getBrowserLanguage() {
+      const preferredLanguages = navigator.languages?.length
+        ? navigator.languages
+        : [navigator.language];
+
+      const supportedLanguage = preferredLanguages.find((language) => {
+        const locale = language.toLowerCase();
+        return locale.startsWith('pt') || locale.startsWith('en');
+      });
+
+      return supportedLanguage?.toLowerCase().startsWith('pt') ? 'pt-BR' : 'en';
+    }
+
+    function setLanguage(language, persist = false) {
       const selectedLanguage = translations[language] ? language : 'pt-BR';
       const copy = translations[selectedLanguage];
 
@@ -427,16 +440,17 @@
         button.setAttribute('aria-pressed', String(button.dataset.language === selectedLanguage));
       });
 
-      saveLanguage(selectedLanguage);
+      if (persist) {
+        saveLanguage(selectedLanguage);
+      }
     }
 
     languageButtons.forEach((button) => {
-      button.addEventListener('click', () => setLanguage(button.dataset.language));
+      button.addEventListener('click', () => setLanguage(button.dataset.language, true));
     });
 
     const savedLanguage = getSavedLanguage();
-    const browserLanguage = navigator.language.toLowerCase().startsWith('pt') ? 'pt-BR' : 'en';
-    setLanguage(savedLanguage || browserLanguage);
+    setLanguage(savedLanguage || getBrowserLanguage());
   </script>
 </body>
 </html>

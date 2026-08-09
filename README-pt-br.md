@@ -19,7 +19,7 @@ A página também inclui um seletor de português/inglês, navegação semântic
 
 ## Seletor de idioma
 
-O controle **PT / EN** no topo da página traduz todos os textos visíveis, além do título do documento, descrição para buscadores, atributo de idioma e rótulos de acessibilidade. Na primeira visita, a página acompanha o idioma do navegador (navegadores em português usam português brasileiro; os demais usam inglês). A escolha do visitante fica salva no `localStorage` e é restaurada nas próximas visitas.
+O controle **PT / EN** no topo da página traduz todos os textos visíveis, além do título do documento, descrição para buscadores, atributo de idioma e rótulos de acessibilidade. Quando não há uma escolha salva, a página verifica a lista ordenada de idiomas do navegador e usa a primeira opção compatível: idiomas em português usam português brasileiro, idiomas em inglês usam inglês e os demais usam inglês como alternativa. Uma escolha explícita do visitante fica salva no `localStorage` e é restaurada nas próximas visitas.
 
 ## Stack
 
