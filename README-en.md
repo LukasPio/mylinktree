@@ -1,24 +1,30 @@
 # Lucas Pio — Linktree
 
-A personal link-in-bio page with a terminal-inspired look, built to bring all my contact channels and work together in one place — and help me land new freelance clients.
+🇧🇷 [Leia em português](./README-pt-br.md)
+
+A responsive personal link hub that brings together my company, contact channels, and work in one place.
 
 ## Purpose
 
-This repository holds a single, self-contained landing page that acts as my digital business card. Instead of a generic list of buttons, it's styled like a code editor terminal session, which fits the audience it's meant for: people looking to hire a developer.
+This repository contains a self-contained landing page that acts as my digital business card. Its clean, responsive card layout highlights O Ponto Web and makes it easy for potential clients to get in touch.
 
 It links out to:
 
-- **GitHub** — my code and past projects
+- **O Ponto Web** — my web development company
+- **WhatsApp** — quick conversation
 - **Email** — direct contact
-- **WhatsApp** — quick message
-- **Portfolio** *(coming soon)* — a future page aggregating every project I've built or sold
+- **GitHub** — my code and projects
+
+The page also includes semantic navigation, visible keyboard focus states, reduced-motion support, and a mobile layout.
 
 ## Tech stack
 
-Just one HTML file. No build step, no framework, no JavaScript logic — open it and it works.
+Just one HTML file. There is no build step, framework, package manager, or JavaScript — open it in a browser and it works.
 
-- `JetBrains Mono` — terminal-style headings and UI text
-- `Inter` — body copy (the bio)
+- HTML5
+- CSS3
+- `DM Sans` — body and interface text
+- `Manrope` — headings and brand marks
 
 Both fonts are loaded from Google Fonts via CDN.
 
@@ -26,42 +32,41 @@ Both fonts are loaded from Google Fonts via CDN.
 
 ```
 .
-├── lucas-pio-linktree.html   # the page itself
-└── README.md
+├── index.html          # the landing page and its styles
+├── README.md           # language selector
+├── README-en.md        # English documentation
+├── README-pt-br.md     # Brazilian Portuguese documentation
+└── LICENSE             # MIT license
 ```
+
+## Running locally
+
+Open `index.html` directly in a browser. To serve it over HTTP instead, run a static server from the project directory, for example:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit `http://localhost:8000`.
 
 ## Customizing
 
-Everything lives in `lucas-pio-linktree.html`:
+Everything lives in `index.html`:
 
 | To change | Look in |
 |---|---|
 | Colors | `:root { ... }` inside `<style>` |
-| Name / title | `.name` and `.role` classes |
-| Bio text | `<div class="bio">` block |
-| Links | `<div class="links">` section |
-
-### Turning on the portfolio link
-
-Once the portfolio page is live, replace:
-
-```html
-<span class="link disabled" aria-disabled="true">
-```
-
-with:
-
-```html
-<a class="link" href="https://your-url-here.com" target="_blank" rel="noopener noreferrer">
-```
-
-and drop the `<span class="badge">coming soon</span>` line.
+| Page title and search description | `<title>` and `<meta name="description">` |
+| Name and introduction | `<header class="profile">` |
+| Featured company | `<a class="company-card">` |
+| Contact and project links | `<nav class="links">` |
+| Footer text | `<footer>` |
 
 ## Deploying
 
 Any static host works, for example:
 
-- **GitHub Pages** — rename the file to `index.html`, push it to a repo, and enable Pages in the repo settings.
+- **GitHub Pages** — push the repository and enable Pages in the repository settings.
 - **Vercel** or **Netlify** — drag and drop the folder.
 
 ## Contact
@@ -73,3 +78,5 @@ Any static host works, for example:
 ## Feel free to use it
 
 Feel free to fork or copy this code and swap in your own information — name, bio, links, and colors. No need to ask permission or credit me, just make it yours.
+
+This project is available under the [MIT License](./LICENSE).

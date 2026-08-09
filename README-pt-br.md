@@ -1,24 +1,30 @@
 # Lucas Pio — Linktree
 
-Uma página de link-in-bio pessoal com visual de terminal, feita para reunir meus canais de contato e trabalhos em um só lugar — e me ajudar a conseguir novos clientes freelancer.
+🇺🇸 [Read in English](./README-en.md)
+
+Uma página pessoal e responsiva que reúne minha empresa, canais de contato e trabalhos em um só lugar.
 
 ## Propósito
 
-Este repositório contém uma landing page única e independente que funciona como meu cartão de visitas digital. Em vez de uma lista genérica de botões, ela é estilizada como uma sessão de terminal de editor de código, o que combina com o público a que se destina: pessoas procurando contratar um desenvolvedor.
+Este repositório contém uma landing page independente que funciona como meu cartão de visitas digital. O layout limpo e responsivo em cartões destaca a O Ponto Web e facilita o contato de potenciais clientes.
 
 Ela leva para:
 
-- **GitHub** — meu código e projetos anteriores
+- **O Ponto Web** — minha empresa de desenvolvimento web
+- **WhatsApp** — conversa rápida
 - **E-mail** — contato direto
-- **WhatsApp** — mensagem rápida
-- **Portfólio** *(em breve)* — uma futura página reunindo todos os projetos que já construí ou vendi
+- **GitHub** — meu código e projetos
+
+A página também inclui navegação semântica, foco visível para teclado, suporte à preferência por movimento reduzido e layout para dispositivos móveis.
 
 ## Stack
 
-Apenas um arquivo HTML. Sem build, sem framework, sem lógica em JavaScript — é só abrir e usar.
+Apenas um arquivo HTML. Sem build, framework, gerenciador de pacotes ou JavaScript — é só abrir no navegador e usar.
 
-- `JetBrains Mono` — títulos e textos de interface no estilo terminal
-- `Inter` — texto corrido (a bio)
+- HTML5
+- CSS3
+- `DM Sans` — textos corridos e de interface
+- `Manrope` — títulos e elementos da marca
 
 As duas fontes são carregadas via Google Fonts (CDN).
 
@@ -26,42 +32,41 @@ As duas fontes são carregadas via Google Fonts (CDN).
 
 ```
 .
-├── lucas-pio-linktree.html   # a página em si
-└── README.md
+├── index.html          # a landing page e seus estilos
+├── README.md           # seletor de idioma
+├── README-en.md        # documentação em inglês
+├── README-pt-br.md     # documentação em português brasileiro
+└── LICENSE             # licença MIT
 ```
+
+## Executando localmente
+
+Abra o arquivo `index.html` diretamente no navegador. Se preferir servi-lo por HTTP, inicie um servidor estático na pasta do projeto, por exemplo:
+
+```bash
+python3 -m http.server 8000
+```
+
+Depois, acesse `http://localhost:8000`.
 
 ## Personalizando
 
-Tudo está em `lucas-pio-linktree.html`:
+Tudo está em `index.html`:
 
 | O que mudar | Onde procurar |
 |---|---|
 | Cores | `:root { ... }` dentro do `<style>` |
-| Nome / cargo | classes `.name` e `.role` |
-| Texto da bio | bloco `<div class="bio">` |
-| Links | seção `<div class="links">` |
-
-### Ativando o link do portfólio
-
-Quando a página do portfólio estiver no ar, troque:
-
-```html
-<span class="link disabled" aria-disabled="true">
-```
-
-por:
-
-```html
-<a class="link" href="https://sua-url-aqui.com" target="_blank" rel="noopener noreferrer">
-```
-
-e remova a linha `<span class="badge">em breve</span>`.
+| Título da página e descrição de busca | `<title>` e `<meta name="description">` |
+| Nome e apresentação | `<header class="profile">` |
+| Empresa em destaque | `<a class="company-card">` |
+| Links de contato e projetos | `<nav class="links">` |
+| Texto do rodapé | `<footer>` |
 
 ## Publicando
 
 Qualquer hospedagem estática funciona, por exemplo:
 
-- **GitHub Pages** — renomeie o arquivo para `index.html`, suba num repositório e ative o Pages nas configurações.
+- **GitHub Pages** — envie o repositório e ative o Pages nas configurações.
 - **Vercel** ou **Netlify** — arraste a pasta e pronto.
 
 ## Contato
@@ -73,3 +78,5 @@ Qualquer hospedagem estática funciona, por exemplo:
 ## Fique à vontade pra usar
 
 Fique à vontade pra dar fork ou copiar esse código e trocar pelas suas próprias informações — nome, bio, links e cores. Não precisa pedir permissão nem me dar crédito, é só fazer sua versão.
+
+Este projeto está disponível sob a [Licença MIT](./LICENSE).
